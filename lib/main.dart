@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
 
         fontFamily: 'Poppins',
         brightness: Brightness.dark,
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrangeAccent),
         useMaterial3: true,
       ),
       home: const NotesView(),
