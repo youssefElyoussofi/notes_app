@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key});
-
+  const CustomSearchBar({super.key, required this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +12,7 @@ class CustomSearchBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(16)),
-      child: const Icon(Icons.search,color: Colors.white,),  
+      child:  Icon(icon,color: Colors.white,),  
     );
   }
 }
