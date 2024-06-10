@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.ontap});
+  const CustomButton({super.key, this.ontap,this.isLoading = false});
   final void Function()? ontap;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
+    return isLoading ? const CircularProgressIndicator() :GestureDetector(
       onTap: ontap,
       child: Container(
         margin: const EdgeInsets.only(top: 20),
