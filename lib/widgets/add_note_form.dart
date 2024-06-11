@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubit/notes_cubit/notes_cubit_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/widgets/colors_picker.dart';
 import 'package:notes_app/widgets/custom_botton.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -28,6 +30,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
     return Form(
       key: formkey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
@@ -45,6 +48,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
           ),
+          const Padding(
+            padding: EdgeInsets.only(top: 10,left: 10),
+            child: Text('Select Color',style: TextStyle(color: kprimaryColor),),
+          ),
+          const ColorsListView(),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: BlocBuilder<AddNoteCubit, AddNoteState>(
@@ -76,3 +84,4 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+

@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
     return isLoading ? const CircularProgressIndicator() :GestureDetector(
       onTap: ontap,
       child: Container(
-        margin: const EdgeInsets.only(top: 20),
+      
         height: 50,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
